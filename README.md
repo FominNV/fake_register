@@ -8,6 +8,6 @@
 
 Оптимизация изображений - AdobePhotoShop;
 
-Код - Eslint. Prettier;
+Код - Eslint, Prettier;
 
 Deploy [#Fake_register](https://fominnv.github.io/fake_register)
