@@ -1,0 +1,24 @@
+@mixin flex($jc: flex-start, $ai: flex-start, $fd: row) {
+  display: flex;
+  justify-content: $jc;
+  align-items: $ai;
+  flex-direction: $fd;
+}
+
+@mixin btn-reset() {
+  border: none;
+  background: none;
+  outline: none;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+@mixin inp-reset() {
+  border: none;
+  outline: none;
+  background: none;
+  outline: none;
+  margin: 0;
+  padding: 0;
+}
