@@ -1,0 +1,32 @@
+@import "styles/sass/main";
+
+.form-component {
+  width: 100%;
+  height: 100%;
+
+  &__form {
+    position: relative;
+    width: fit-content;
+  }
+
+  &__error {
+    position: absolute;
+    left: 0;
+    top: -20px;
+    width: 100%;
+    font: 400 14px/16px $roboto-medium;
+    color: $red;
+    text-align: center;
+  }
+
+  &__inputs {
+    position: relative;
+    width: fit-content;
+    @include flex(_, flex-end, column);
+  }
+
+  &__btn {
+    width: 150px;
+    height: 32px;
+  }
+}
