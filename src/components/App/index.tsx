@@ -8,15 +8,15 @@ import "./styles.scss"
 const App: FC = () => (
   <Routes>
     <Route
-      path="*"
+      path="/fake_register"
       element={<Main />}
     />
     <Route
-      path="/:id"
+      path="/fake_register/:id"
       element={<Main />}
     />
     <Route
-      path="/contacts"
+      path="/fake_register/contacts"
       element={<Contact />}
     />
   </Routes>
