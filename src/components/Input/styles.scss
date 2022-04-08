@@ -1,0 +1,74 @@
+@import "styles/sass/main";
+
+.Input {
+  margin-bottom: 12px;
+  @include flex(_, flex-end);
+
+  @media (max-device-width: $md) {
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+    margin-bottom: 16px;
+    @include flex(flex-end, flex-end);
+  }
+
+  @media (max-device-width: $sm) {
+    display: block;
+  }
+
+  &__label {
+    margin-right: 5px;
+    font: 300 14px/16px $roboto-light;
+    color: $white;
+    text-align: right;
+    justify-self: stretch;
+
+    @media (max-device-width: $md) {
+      font-size: 14px;
+      line-height: 16px;
+      white-space: nowrap;
+    }
+  }
+
+  &__input-block {
+    position: relative;
+    width: 224px;
+    height: 20px;
+  }
+
+  &__inp {
+    @include inp-reset;
+    width: 100%;
+    height: 100%;
+    padding: 0 22px 0 8px;
+    font: 300 14px/16px $roboto-light;
+    color: $white;
+    text-overflow: ellipsis;
+    border-bottom: 1px solid $gray;
+    box-sizing: border-box;
+
+    &::placeholder {
+      color: $gray;
+    }
+
+    @media (max-device-width: $md) {
+      margin-top: 4px;
+      font-size: 16px;
+      line-height: 18px;
+    }
+  }
+
+  &__btn {
+    @include btn-reset;
+    position: absolute;
+    top: calc(50% - 4px);
+    right: 8px;
+    width: 8px;
+    height: 8px;
+    display: none;
+
+    &_active {
+      @include flex;
+    }
+  }
+}
