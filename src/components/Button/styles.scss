@@ -1,0 +1,63 @@
+@import "styles/sass/main";
+
+.Button {
+  @include btn-reset;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(90, 97, 105, 0.12);
+  font: 500 16px/18px $roboto-medium;
+  color: $white;
+  overflow: hidden;
+
+  &.gray {
+    color: $gray-light;
+  }
+
+  &.cloudy {
+    background: linear-gradient(90deg, #132949 0%, #0c7b67 100%);
+  }
+
+  &.brownRed {
+    background: linear-gradient(90deg, #493013 0%, #7b0c3b 100%);
+  }
+
+  &.purple {
+    background: linear-gradient(90deg, #281349 0%, #720c7b 100%);
+  }
+
+  &:hover {
+    .Button__filter {
+      background: rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  &:active {
+    .Button__filter {
+      background: rgba(0, 0, 0, 0.4);
+    }
+  }
+
+  &:disabled:hover,
+  &:disabled:active {
+    .Button__filter {
+      background: rgba(0, 0, 0, 0);
+    }
+  }
+
+  &__filter {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0);
+    transition: background 0.25s;
+  }
+
+  &__name {
+    position: relative;
+    z-index: 5;
+  }
+}
