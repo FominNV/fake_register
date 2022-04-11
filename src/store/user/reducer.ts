@@ -2,6 +2,7 @@ import { IUserState, UserAction, UserActionTypes } from "./types"
 
 const initialState: IUserState = {
   user: null,
+  contacts: null,
   loading: false
 }
 
@@ -27,6 +28,12 @@ export function userReducer(state: IUserState = initialState, action: UserAction
       return {
         ...state,
         loading: action.payload.loading
+      }
+
+    case UserActionTypes.LOAD_CONTACTS:
+      return {
+        ...state,
+        contacts: action.payload.contacts
       }
 
     default:

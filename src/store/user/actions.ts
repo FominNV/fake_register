@@ -1,4 +1,4 @@
-import { IUser, SetLoadingType, UserActionTypes, UserDispatch } from "./types"
+import { IContact, IUser, SetLoadingType, UserActionTypes, UserDispatch } from "./types"
 
 export const setUser: UserDispatch<Nullable<IUser>> = (user) => {
   return {
@@ -18,11 +18,11 @@ export const registerUser: UserDispatch<IUser> = (user) => {
 
 export const logoutUser: UserDispatch<void> = () => {
   Object.keys(localStorage).map((elem) => {
-    if (elem.split('_')[1] === '1') {
+    if (elem.split("_")[1] === "1") {
       const user = localStorage.getItem(elem)
 
       if (user) {
-        localStorage.setItem(`${elem.split('_')[0]}_0`, user)
+        localStorage.setItem(`${elem.split("_")[0]}_0`, user)
         localStorage.removeItem(elem)
       }
     }
@@ -35,7 +35,7 @@ export const logoutUser: UserDispatch<void> = () => {
 
 export const loginUser: UserDispatch<string> = (email) => {
   Object.keys(localStorage).map((elem) => {
-    if (elem.split('_')[0] === email) {
+    if (elem.split("_")[0] === email) {
       const user = localStorage.getItem(elem)
 
       if (user) {
@@ -54,5 +54,12 @@ export const setLoading: SetLoadingType = (loading) => {
   return {
     type: UserActionTypes.SET_LOADING,
     payload: { loading }
+  }
+}
+
+export const loadContacts: UserDispatch<Nullable<IContact[]>> = (contacts) => {
+  return {
+    type: UserActionTypes.LOAD_CONTACTS,
+    payload: { contacts }
   }
 }
