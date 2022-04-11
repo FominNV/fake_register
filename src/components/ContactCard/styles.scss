@@ -1,0 +1,75 @@
+@import "styles/sass/main";
+
+.ContactCard {
+  width: calc(16.6666% - 12px);
+  padding: 16px;
+  margin-right: 12px;
+  margin-bottom: 12px;
+  border: 1px solid black;
+  border-radius: 10px;
+  transition: all 0.25s;
+
+  @media (max-device-width: $lg) {
+    width: calc(20% - 12px);
+  }
+
+  @media (max-device-width: $l) {
+    width: calc(25% - 12px);
+  }
+
+  @media (max-device-width: $md) {
+    width: calc(33.33% - 12px);
+    min-height: 90px;
+    padding: 8px;
+    @include flex(space-between);
+  }
+
+  @media (max-device-width: $sm) {
+    width: calc(50% - 12px);
+  }
+
+  &:hover {
+    box-shadow: 0px 0px 19px 2px rgba(0, 0, 0, 0.5);
+  }
+
+  &__img {
+    width: 100%;
+
+    @media (max-device-width: $md) {
+      width: 30%;
+    }
+  }
+
+  &__user {
+    width: 100%;
+    height: 32px;
+    margin-top: 16px;
+    @include flex(space-between, center);
+
+    @media (max-device-width: $md) {
+      justify-self: stretch;
+      margin: 0;
+      @include flex(space-between, center, column);
+    }
+
+    &_name {
+      font: 500 16px/18px $roboto-regular;
+      color: $green;
+
+      @media (max-device-width: $md) {
+        margin-bottom: 8px;
+      }
+    }
+
+    &_phone {
+      color: $yellow-light;
+      cursor: pointer;
+      transition: all 0.25s;
+
+      &:hover {
+        color: $red;
+        animation: jello-horizontal 0.8s 1 linear;
+      }
+    }
+  }
+}
