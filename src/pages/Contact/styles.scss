@@ -5,23 +5,39 @@
   height: calc(100% - 128px);
   @include flex(center);
 
+  &__user-block {
+    position: relative;
+    animation: move-userblock 2s 1 ease-in;
+  }
+
   &__content {
+    position: relative;
     width: 100%;
     height: 100%;
-    @include flex(center, center, column);
+    padding: 32px 0;
   }
 
   &__username {
-    margin-top: 15%;
-    margin-bottom: 32px;
+    margin-bottom: 8px;
     font: italic 400 18px/21px $roboto-regular;
     color: $gray-high-light;
   }
 
-
   &__img {
     width: 100%;
     max-width: 400px;
+    margin-bottom: 32px;
     border-radius: 12%;
+  }
+
+  &__cardlist {
+    width: 100%;
+    @include flex;
+    flex-wrap: wrap;
+    animation: show-cardlist 3s 1 ease-in;
+
+    @media (max-device-width: $md) {
+      @include flex(space-between);
+    }
   }
 }
