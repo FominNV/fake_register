@@ -31,7 +31,8 @@
   }
 
   &__cardlist {
-    width: 100%;
+    width: calc(100% + 12px);
+    // margin-right: -12px;
     @include flex;
     flex-wrap: wrap;
     animation: show-cardlist 3s 1 ease-in;
